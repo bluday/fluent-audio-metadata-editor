@@ -9,9 +9,9 @@ namespace FluentMusicMetadataEditor;
 /// </summary>
 public sealed partial class MainWindow : Window
 {
-    public readonly EditorView _editorView = new();
+    private readonly EditorView _editorView = new();
     
-    public readonly SettingsView _settingsView = new();
+    private readonly SettingsView _settingsView = new();
 
     public DisplayArea DisplayArea { get; }
 

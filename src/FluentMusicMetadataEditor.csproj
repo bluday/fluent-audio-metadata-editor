@@ -7,29 +7,29 @@
     <Platforms>x86;x64;ARM64</Platforms>
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
-    <UseWinUI>true</UseWinUI>
+    <UseWi\UI>true</UseWi\UI>
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
     <Title>Fluent Music Metadata Editor</Title>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="FluentMusicMetadataEditor.UI\Controls\DescriptiveExpanderContent.xaml" />
-    <None Remove="FluentMusicMetadataEditor.UI\Controls\EditableCoverArt.xaml" />
-    <None Remove="FluentMusicMetadataEditor.UI\Controls\IconedButtonContent.xaml" />
-    <None Remove="FluentMusicMetadataEditor.UI\Controls\TitleBar.xaml" />
-    <None Remove="FluentMusicMetadataEditor.UI\Controls\Views\EditorView.xaml" />
-    <None Remove="FluentMusicMetadataEditor.UI\Controls\Views\SettingsView.xaml" />
+    <None Remove="FluentMusicMetadataEditor\UI\Controls\DescriptiveExpanderContent.xaml" />
+    <None Remove="FluentMusicMetadataEditor\UI\Controls\EditableCoverArt.xaml" />
+    <None Remove="FluentMusicMetadataEditor\UI\Controls\IconedButtonContent.xaml" />
+    <None Remove="FluentMusicMetadataEditor\UI\Controls\TitleBar.xaml" />
+    <None Remove="FluentMusicMetadataEditor\UI\Controls\Views\EditorView.xaml" />
+    <None Remove="FluentMusicMetadataEditor\UI\Controls\Views\SettingsView.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Assets\SplashScreen.scale-200.png" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
-    <Content Include="Assets\Square150x150Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Assets\StoreLogo.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="..\assets\SplashScreen.scale-200.png" />
+    <Content Include="..\assets\LockScreenLogo.scale-200.png" />
+    <Content Include="..\assets\Square150x150Logo.scale-200.png" />
+    <Content Include="..\assets\Square44x44Logo.scale-200.png" />
+    <Content Include="..\assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="..\assets\StoreLogo.png" />
+    <Content Include="..\assets\Wide310x150Logo.scale-200.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,22 +47,22 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="FluentMusicMetadataEditor.UI\Controls\DescriptiveExpanderContent.xaml">
+    <Page Update="FluentMusicMetadataEditor\UI\Controls\DescriptiveExpanderContent.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="FluentMusicMetadataEditor.Views\IntroductionView.xaml">
+    <Page Update="FluentMusicMetadataEditor\Views\IntroductionView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="FluentMusicMetadataEditor.Views\SettingsView.xaml">
+    <Page Update="FluentMusicMetadataEditor\Views\SettingsView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="FluentMusicMetadataEditor.Views\EditorView.xaml">
+    <Page Update="FluentMusicMetadataEditor\Views\EditorView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

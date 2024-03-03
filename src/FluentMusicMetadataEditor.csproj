@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="..\assets\**" Label="Assets">
+    <Content Include="..\assets\icons\**" Label="Assets">
       <Link>Assets\%(FileName)%(Extension)</Link>
     </Content>
   </ItemGroup>

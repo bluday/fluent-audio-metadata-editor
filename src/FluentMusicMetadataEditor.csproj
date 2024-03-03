@@ -7,12 +7,13 @@
     <Platforms>x86;x64;ARM64</Platforms>
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
-    <UseWi\UI>true</UseWi\UI>
+    <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
     <Title>Fluent Music Metadata Editor</Title>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  
   <ItemGroup>
     <None Remove="FluentMusicMetadataEditor\UI\Controls\DescriptiveExpanderContent.xaml" />
     <None Remove="FluentMusicMetadataEditor\UI\Controls\EditableCoverArt.xaml" />
@@ -23,13 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="..\assets\SplashScreen.scale-200.png" />
-    <Content Include="..\assets\LockScreenLogo.scale-200.png" />
-    <Content Include="..\assets\Square150x150Logo.scale-200.png" />
-    <Content Include="..\assets\Square44x44Logo.scale-200.png" />
-    <Content Include="..\assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="..\assets\StoreLogo.png" />
-    <Content Include="..\assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="..\assets\**" Label="Assets">
+      <Link>Assets\%(FileName)%(Extension)</Link>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>

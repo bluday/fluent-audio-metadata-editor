@@ -9,6 +9,8 @@ namespace FluentMusicMetadataEditor;
 /// </summary>
 public sealed partial class MainWindow : Window
 {
+    private readonly AppWindow _appWindow;
+
     private readonly EditorView _editorView = new();
     
     private readonly SettingsView _settingsView = new();
@@ -19,8 +21,10 @@ public sealed partial class MainWindow : Window
 
     public MainWindow()
     {
-        DisplayArea            = AppWindow.GetDisplayArea();
-        NonClientPointerSource = AppWindow.GetNonClientPointerSource();
+        _appWindow = AppWindow;
+
+        DisplayArea            = _appWindow.GetDisplayArea();
+        NonClientPointerSource = _appWindow.GetNonClientPointerSource();
 
         InitializeComponent();
 
@@ -31,21 +35,23 @@ public sealed partial class MainWindow : Window
 
     private void ConfigureAppWindow()
     {
-        AppWindow.MakeTitleBarTransparent();
-        AppWindow.SetIsResizable(false);
-        AppWindow.Resize(size: 1200);
-        AppWindow.MoveToCenter(DisplayArea);
+        _appWindow.MakeTitleBarTransparent();
+        _appWindow.SetIsResizable(false);
+        _appWindow.Resize(size: 1200);
+        _appWindow.MoveToCenter(DisplayArea);
     }
 
     private void ConfigureTitleBar()
     {
         ExtendsContentIntoTitleBar = true;
 
-        SetTitleBar(TitleBar);
+        TitleBar titleBar = TitleBar;
 
-        TitleBar.BackButtonCommand = new RelayCommand(ShowEditor);
+        SetTitleBar(titleBar);
 
-        TitleBar.InteractiveRegionRectsChanged += TitleBar_InteractiveRegionRectsChanged;
+        titleBar.BackButtonCommand = new RelayCommand(ShowEditor);
+
+        titleBar.InteractiveRegionRectsChanged += TitleBar_InteractiveRegionRectsChanged;
     }
 
     private void ConfigureViews()
@@ -81,14 +87,16 @@ public sealed partial class MainWindow : Window
     {
         var region = NonClientRegionKind.Passthrough;
 
-        if (!TitleBar.IsBackButtonVisible)
+        TitleBar titleBar = TitleBar;
+
+        if (!titleBar.IsBackButtonVisible)
         {
             NonClientPointerSource.ClearRegionRects(region);
 
             return;
         }
 
-        NonClientPointerSource.SetRegionRects(region, TitleBar.InteractiveRegionRects);
+        NonClientPointerSource.SetRegionRects(region, titleBar.InteractiveRegionRects);
     }
     #endregion
 }

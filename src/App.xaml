@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Application
-    x:Class="FluentMusicMetadataEditor.App"
+    x:Class="BluDay.FluentMusicMetadataEditor.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:converters="using:FluentMusicMetadataEditor.UI.Converters">
+    xmlns:converters="using:BluDay.FluentMusicMetadataEditor.UI.Converters">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

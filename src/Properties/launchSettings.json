@@ -1,9 +1,9 @@
 {
   "profiles": {
-    "FluentMusicMetadataEditor (Package)": {
+    "BluDay.FluentMusicMetadataEditor (Package)": {
       "commandName": "MsixPackage"
     },
-    "FluentMusicMetadataEditor (Unpackaged)": {
+    "BluDay.FluentMusicMetadataEditor (Unpackaged)": {
       "commandName": "Project"
     }
   }

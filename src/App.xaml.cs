@@ -1,4 +1,4 @@
-﻿namespace FluentMusicMetadataEditor;
+﻿namespace BluDay.FluentMusicMetadataEditor;
 
 /// <summary>
 /// Provides application-specific behavior to supplement the default Application class.

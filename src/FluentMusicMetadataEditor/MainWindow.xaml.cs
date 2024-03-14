@@ -15,6 +15,8 @@ public sealed partial class MainWindow : Window
     
     private readonly SettingsView _settingsView = new();
 
+    private readonly TitleBar _titleBar;
+
     public DisplayArea DisplayArea { get; }
 
     public InputNonClientPointerSource NonClientPointerSource { get; }
@@ -22,6 +24,8 @@ public sealed partial class MainWindow : Window
     public MainWindow()
     {
         _appWindow = AppWindow;
+
+        _titleBar = TitleBar;
 
         DisplayArea            = _appWindow.GetDisplayArea();
         NonClientPointerSource = _appWindow.GetNonClientPointerSource();
@@ -45,13 +49,11 @@ public sealed partial class MainWindow : Window
     {
         ExtendsContentIntoTitleBar = true;
 
-        TitleBar titleBar = TitleBar;
+        SetTitleBar(_titleBar);
 
-        SetTitleBar(titleBar);
+        _titleBar.BackButtonCommand = new RelayCommand(ShowEditor);
 
-        titleBar.BackButtonCommand = new RelayCommand(ShowEditor);
-
-        titleBar.InteractiveRegionRectsChanged += TitleBar_InteractiveRegionRectsChanged;
+        _titleBar.InteractiveRegionRectsChanged += _titleBar_InteractiveRegionRectsChanged;
     }
 
     private void ConfigureViews()
@@ -65,14 +67,14 @@ public sealed partial class MainWindow : Window
     {
         ContentControl.Content = _editorView;
 
-        TitleBar.IsBackButtonVisible = false;
+        _titleBar.IsBackButtonVisible = false;
     }
 
     private void ShowSettings()
     {
         ContentControl.Content = _settingsView;
 
-        TitleBar.IsBackButtonVisible = true;
+        _titleBar.IsBackButtonVisible = true;
     }
 
     #region Event handlers
@@ -83,20 +85,18 @@ public sealed partial class MainWindow : Window
         RootGrid.Loaded -= RootGrid_Loaded;
     }
 
-    private void TitleBar_InteractiveRegionRectsChanged(object? sender, EventArgs e)
+    private void _titleBar_InteractiveRegionRectsChanged(object? sender, EventArgs e)
     {
         var region = NonClientRegionKind.Passthrough;
 
-        TitleBar titleBar = TitleBar;
-
-        if (!titleBar.IsBackButtonVisible)
+        if (!_titleBar.IsBackButtonVisible)
         {
             NonClientPointerSource.ClearRegionRects(region);
 
             return;
         }
 
-        NonClientPointerSource.SetRegionRects(region, titleBar.InteractiveRegionRects);
+        NonClientPointerSource.SetRegionRects(region, _titleBar.InteractiveRegionRects);
     }
     #endregion
 }

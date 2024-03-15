@@ -63,7 +63,7 @@ public sealed partial class MainWindow : Window
     {
         _editorView.SettingsButtonCommand = new RelayCommand(ShowSettings);
 
-        // TODO: Configure commands for settings views.
+        // TODO: Configure commands for settings view.
     }
 
     private void ShowEditor()

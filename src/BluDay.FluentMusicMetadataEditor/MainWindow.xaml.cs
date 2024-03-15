@@ -23,14 +23,14 @@ public sealed partial class MainWindow : Window
 
     public MainWindow()
     {
+        InitializeComponent();
+
         _appWindow = AppWindow;
 
         _titleBar = TitleBar;
 
         DisplayArea            = _appWindow.GetDisplayArea();
         NonClientPointerSource = _appWindow.GetNonClientPointerSource();
-
-        InitializeComponent();
 
         ConfigureAppWindow();
         ConfigureTitleBar();

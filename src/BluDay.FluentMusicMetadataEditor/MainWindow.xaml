@@ -26,11 +26,7 @@
         <ContentControl x:Name="ContentControl"
                         HorizontalContentAlignment="Stretch"
                         VerticalContentAlignment="Stretch"
-                        Grid.Row="1">
-            <ContentControl.ContentTransitions>
-                <EntranceThemeTransition/>
-            </ContentControl.ContentTransitions>
-        </ContentControl>
+                        Grid.Row="1"/>
 
         <ContentDialog Title="Hey!"
                        Content="Look at this dialog."

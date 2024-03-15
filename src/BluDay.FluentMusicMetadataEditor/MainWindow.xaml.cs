@@ -11,15 +11,15 @@ public sealed partial class MainWindow : Window
 {
     private readonly AppWindow _appWindow;
 
+    private readonly DisplayArea _displayArea;
+
+    private readonly InputNonClientPointerSource _nonClientPointerSource;
+
     private readonly EditorView _editorView = new();
     
     private readonly SettingsView _settingsView = new();
 
     private readonly TitleBar _titleBar;
-
-    public DisplayArea DisplayArea { get; }
-
-    public InputNonClientPointerSource NonClientPointerSource { get; }
 
     public MainWindow()
     {
@@ -29,8 +29,8 @@ public sealed partial class MainWindow : Window
 
         _titleBar = TitleBar;
 
-        DisplayArea            = _appWindow.GetDisplayArea();
-        NonClientPointerSource = _appWindow.GetNonClientPointerSource();
+        _displayArea            = _appWindow.GetDisplayArea();
+        _nonClientPointerSource = _appWindow.GetNonClientPointerSource();
 
         ConfigureAppWindow();
         ConfigureTitleBar();
@@ -42,7 +42,7 @@ public sealed partial class MainWindow : Window
         _appWindow.MakeTitleBarTransparent();
         _appWindow.SetIsResizable(false);
         _appWindow.Resize(size: 1200);
-        _appWindow.MoveToCenter(DisplayArea);
+        _appWindow.MoveToCenter(_displayArea);
     }
 
     private void ConfigureTitleBar()

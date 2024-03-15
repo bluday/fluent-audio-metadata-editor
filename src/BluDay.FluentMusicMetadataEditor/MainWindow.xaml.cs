@@ -15,9 +15,9 @@ public sealed partial class MainWindow : Window
 
     private readonly InputNonClientPointerSource _nonClientPointerSource;
 
-    private readonly EditorView _editorView = new();
+    private readonly EditorView _editorView;
     
-    private readonly SettingsView _settingsView = new();
+    private readonly SettingsView _settingsView;
 
     private readonly TitleBar _titleBar;
 
@@ -27,10 +27,13 @@ public sealed partial class MainWindow : Window
 
         _appWindow = AppWindow;
 
-        _titleBar = TitleBar;
-
         _displayArea            = _appWindow.GetDisplayArea();
         _nonClientPointerSource = _appWindow.GetNonClientPointerSource();
+
+        _editorView   = new();
+        _settingsView = new();
+
+        _titleBar = TitleBar;
 
         ConfigureAppWindow();
         ConfigureTitleBar();

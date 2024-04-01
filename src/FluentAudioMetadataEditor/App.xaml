@@ -10,12 +10,11 @@
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
             </ResourceDictionary.MergedDictionaries>
             
-            <!-- ( 0 _ o ) -->
             <SolidColorBrush x:Key="WindowCaptionBackground">Transparent</SolidColorBrush>
             <SolidColorBrush x:Key="WindowCaptionBackgroundDisabled">Transparent</SolidColorBrush>
             <SolidColorBrush x:Key="WindowCaptionForeground">White</SolidColorBrush>
 
-            <ImageSource x:Key="AppIconImageSource">/Assets/Square44x44Logo.scale-200.png</ImageSource>
+            <ImageSource x:Key="AppIconImageSource">.../Assets/Square44x44Logo.scale-200.png</ImageSource>
             <ImageSource x:Key="CoverArtPlaceholderImageSource">https://store-images.s-microsoft.com/image/apps.16930.14011015795942652.ca67db1b-d21e-47e9-bbb4-5ece2ce3f774.e33e990e-199c-48b3-bc60-b10b50a49cf1</ImageSource>
 
             <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>

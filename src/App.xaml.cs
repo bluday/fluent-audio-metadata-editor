@@ -1,4 +1,4 @@
-﻿namespace FluentMusicMetadataEditor;
+﻿namespace FluentAudioMetadataEditor;
 
 /// <summary>
 /// Provides application-specific behavior to supplement the default Application class.

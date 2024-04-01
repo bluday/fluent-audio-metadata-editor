@@ -1,10 +1,7 @@
 {
   "profiles": {
-    "FluentMusicMetadataEditor (Package)": {
+    "FluentAudioMetadataEditor": {
       "commandName": "MsixPackage"
-    },
-    "FluentMusicMetadataEditor (Unpackaged)": {
-      "commandName": "Project"
     }
   }
 }

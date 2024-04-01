@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl
+    x:Class="FluentAudioMetadataEditor.UI.Controls.IconedButtonContent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:DefaultBindMode="OneWay">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="{x:Bind Spacing, Converter={StaticResource DoubleToGridLengthConverter}, ConverterParameter='Pixel'}"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <FontIcon Glyph="{x:Bind Glyph}" FontSize="{x:Bind GlyphSize}"/>
+
+        <TextBlock Text="{x:Bind Text}" Grid.Column="2"/>
+    </Grid>
+</UserControl>

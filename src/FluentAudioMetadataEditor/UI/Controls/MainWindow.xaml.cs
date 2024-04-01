@@ -2,7 +2,7 @@ using FluentAudioMetadataEditor.UI.Input;
 using Microsoft.UI.Input;
 using Microsoft.UI.Windowing;
 
-namespace FluentAudioMetadataEditor;
+namespace FluentAudioMetadataEditor.UI.Controls;
 
 /// <summary>
 /// An empty window that can be used on its own or navigated to within a Frame.

@@ -44,11 +44,11 @@
                            MaxLines="2"
                            Margin="0,-8,0,4"
                            Style="{StaticResource BodyStrongTextBlockStyle}"
-                           Text="Remembrence"/>
+                           Text="Remembrance"/>
 
                 <ScrollViewer HorizontalScrollMode="Disabled">
                     <StackPanel Spacing="4">
-                        <TextBlock Style="{StaticResource CodecPropertyTextBlockStyle}" Text="File name: Halo 2 - Remembrence.mp3"/>
+                        <TextBlock Style="{StaticResource CodecPropertyTextBlockStyle}" Text="File name: Halo 2 - Remembrance.mp3"/>
                         <TextBlock Style="{StaticResource CodecPropertyTextBlockStyle}" Text="File type: MP3 (.mp3)"/>
                         <TextBlock Style="{StaticResource CodecPropertyTextBlockStyle}" Text="File size: 2.28 MB"/>
                         <TextBlock Style="{StaticResource CodecPropertyTextBlockStyle}" Text="Length: 00:01:17"/>

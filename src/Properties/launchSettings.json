@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "FluentAudioMetadataEditor": {
+    "BluDay.FluentAudioMetadataEditor": {
       "commandName": "MsixPackage"
     }
   }

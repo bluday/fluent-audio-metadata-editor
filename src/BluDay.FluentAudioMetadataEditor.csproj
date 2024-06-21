@@ -22,12 +22,12 @@
   </ItemGroup>
   
   <ItemGroup>
-    <None Remove="BluDay.FluentAudioMetadataEditor\UI\Controls\DescriptiveExpanderContent.xaml" />
-    <None Remove="BluDay.FluentAudioMetadataEditor\UI\Controls\EditableCoverArt.xaml" />
-    <None Remove="BluDay.FluentAudioMetadataEditor\UI\Controls\IconedButtonContent.xaml" />
-    <None Remove="BluDay.FluentAudioMetadataEditor\UI\Controls\TitleBar.xaml" />
-    <None Remove="BluDay.FluentAudioMetadataEditor\UI\Controls\Views\EditorView.xaml" />
-    <None Remove="BluDay.FluentAudioMetadataEditor\UI\Controls\Views\SettingsView.xaml" />
+    <None Remove="BluDay.FluentAudioMetadataEditor\Controls\DescriptiveExpanderContent.xaml" />
+    <None Remove="BluDay.FluentAudioMetadataEditor\Controls\EditableCoverArt.xaml" />
+    <None Remove="BluDay.FluentAudioMetadataEditor\Controls\IconedButtonContent.xaml" />
+    <None Remove="BluDay.FluentAudioMetadataEditor\Controls\TitleBar.xaml" />
+    <None Remove="BluDay.FluentAudioMetadataEditor\Views\EditorView.xaml" />
+    <None Remove="BluDay.FluentAudioMetadataEditor\Views\SettingsView.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,11 +51,6 @@
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="BluDay.FluentAudioMetadataEditor\UI\Controls\DescriptiveExpanderContent.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="BluDay.FluentAudioMetadataEditor\Views\IntroductionView.xaml">

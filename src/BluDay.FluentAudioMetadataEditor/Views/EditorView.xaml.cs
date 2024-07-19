@@ -1,14 +1,12 @@
 namespace BluDay.FluentAudioMetadataEditor.Views;
 
+/// <summary>
+/// Represents the view for editing the metadata of a file.
+/// </summary>
 public sealed partial class EditorView : UserControl
 {
-    public AudioFileInfo? FileInfo { get; set; }
-
-    public ICommand? SettingsButtonCommand
-    {
-        get => SettingsButton.Command;
-        set => SettingsButton.Command = value;
-    }
-
+    /// <summary>
+    /// Initializes a new instance of the <see cref="EditorView"/> class.
+    /// </summary>
     public EditorView() => InitializeComponent();
 }

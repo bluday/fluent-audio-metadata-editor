@@ -22,6 +22,7 @@
   </ItemGroup>
   
   <ItemGroup>
+    <None Remove="Assets\Icon-64.ico" />
     <None Remove="BluDay.FluentAudioMetadataEditor\Controls\DescriptiveExpanderContent.xaml" />
     <None Remove="BluDay.FluentAudioMetadataEditor\Controls\EditableCoverArt.xaml" />
     <None Remove="BluDay.FluentAudioMetadataEditor\Controls\IconedButtonContent.xaml" />

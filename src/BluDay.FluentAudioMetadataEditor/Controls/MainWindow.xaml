@@ -7,8 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:BluDay.FluentAudioMetadataEditor.Controls"
     mc:Ignorable="d"
-    x:DefaultBindMode="OneWay"
-    Title="Fluent Audio Metadata Editor">
+    x:DefaultBindMode="OneWay">
     <Window.SystemBackdrop>
         <MicaBackdrop Kind="Base"/>
     </Window.SystemBackdrop>

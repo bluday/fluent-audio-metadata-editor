@@ -54,7 +54,7 @@ public sealed partial class TitleBar : UserControl
         set => SetValue(TitleProperty, value);
     }
 
-    public System.Windows.Input.ICommand? BackButtonCommand
+    public ICommand? BackButtonCommand
     {
         get => BackButton.Command;
         set => BackButton.Command = value;

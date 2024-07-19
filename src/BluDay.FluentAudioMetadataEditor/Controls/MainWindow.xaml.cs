@@ -11,69 +11,53 @@ public sealed partial class MainWindow : Window
 
     private readonly InputNonClientPointerSource _nonClientPointerSource;
 
-    private readonly EditorView _editorView;
-    
-    private readonly SettingsView _settingsView;
+    private readonly EditorView _editorView = new();
 
-    private readonly TitleBar _titleBar;
+    private readonly SettingsView _settingsView = new();
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="MainWindow"/> class.
+    /// </summary>
     public MainWindow()
     {
-        InitializeComponent();
-
         _appWindow = AppWindow;
 
         _displayArea            = _appWindow.GetDisplayArea();
         _nonClientPointerSource = _appWindow.GetNonClientPointerSource();
 
-        _editorView   = new();
-        _settingsView = new();
-
-        _titleBar = TitleBar;
-
-        ConfigureAppWindow();
-        ConfigureTitleBar();
-        ConfigureViews();
-    }
-
-    private void ConfigureAppWindow()
-    {
         _appWindow.MakeTitleBarTransparent();
         _appWindow.SetIsResizable(false);
         _appWindow.Resize(size: 1200);
         _appWindow.MoveToCenter(_displayArea);
+
+        InitializeComponent();
+
+        ConfigureTitleBar();
     }
 
     private void ConfigureTitleBar()
     {
         ExtendsContentIntoTitleBar = true;
 
-        SetTitleBar(_titleBar);
+        SetTitleBar(TitleBar);
 
-        _titleBar.BackButtonCommand = new RelayCommand(ShowEditor);
+        _appWindow.SetIcon("Assets/Icon-64.ico");
 
-        _titleBar.InteractiveRegionRectsChanged += _titleBar_InteractiveRegionRectsChanged;
-    }
-
-    private void ConfigureViews()
-    {
-        _editorView.SettingsButtonCommand = new RelayCommand(ShowSettings);
-
-        // TODO: Configure commands for settings view.
+        TitleBar.InteractiveRegionRectsChanged += TitleBar_InteractiveRegionRectsChanged;
     }
 
     private void ShowEditor()
     {
         ContentControl.Content = _editorView;
 
-        _titleBar.IsBackButtonVisible = false;
+        TitleBar.IsBackButtonVisible = false;
     }
 
     private void ShowSettings()
     {
         ContentControl.Content = _settingsView;
 
-        _titleBar.IsBackButtonVisible = true;
+        TitleBar.IsBackButtonVisible = true;
     }
 
     #region Event handlers
@@ -84,18 +68,18 @@ public sealed partial class MainWindow : Window
         RootGrid.Loaded -= RootGrid_Loaded;
     }
 
-    private void _titleBar_InteractiveRegionRectsChanged(object? sender, EventArgs e)
+    private void TitleBar_InteractiveRegionRectsChanged(object? sender, EventArgs e)
     {
-        var region = NonClientRegionKind.Passthrough;
+        NonClientRegionKind region = NonClientRegionKind.Passthrough;
 
-        if (!_titleBar.IsBackButtonVisible)
+        if (!TitleBar.IsBackButtonVisible)
         {
             _nonClientPointerSource.ClearRegionRects(region);
 
             return;
         }
 
-        _nonClientPointerSource.SetRegionRects(region, _titleBar.InteractiveRegionRects);
+        _nonClientPointerSource.SetRegionRects(region, TitleBar.InteractiveRegionRects);
     }
     #endregion
 }

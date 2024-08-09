@@ -32,7 +32,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="256"/>
                 <RowDefinition Height="16"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
 
             <controls:EditableCoverArt ImageSource="{StaticResource CoverArtPlaceholderImageSource}"
@@ -94,11 +94,11 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Horizontal" Spacing="6">
-                <Button Padding="8,6">
+                <Button Padding="6,4">
                     <controls:IconedButtonContent Glyph="&#xe8e5;" Text="Open file"/>
                 </Button>
         
-                <Button IsEnabled="False" Padding="8,6">
+                <Button IsEnabled="False" Padding="6,4">
                     <controls:IconedButtonContent Glyph="&#xe74e;" Text="Save"/>
                 </Button>
             </StackPanel>

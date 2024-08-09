@@ -2,7 +2,7 @@
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluDay.FluentAudioMetadataEditor", "BluDay.FluentAudioMetadataEditor.csproj", "{3448F53A-1FC2-4EEB-8BD2-491F7DE95CC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BluDay.FluentAudioMetadataEditor", "BluDay.FluentAudioMetadataEditor\BluDay.FluentAudioMetadataEditor.csproj", "{3448F53A-1FC2-4EEB-8BD2-491F7DE95CC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,5 +1,3 @@
 # fluent-audio-metadata-editor
 
-A simple WinUI 3-based music file metadata editor for Windows 11.
-
-Development status: Incomplete
+Simple audio file metadata editor app for Windows 11.

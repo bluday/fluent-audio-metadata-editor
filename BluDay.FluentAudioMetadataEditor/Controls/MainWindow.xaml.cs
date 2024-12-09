@@ -27,7 +27,7 @@ public sealed partial class MainWindow : Window
 
         _appWindow.MakeTitleBarTransparent();
         _appWindow.SetIsResizable(false);
-        _appWindow.Resize(size: 1200);
+        _appWindow.Resize(800);
         _appWindow.MoveToCenter(_displayArea);
 
         InitializeComponent();

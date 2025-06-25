@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "FluentAudioMetadataEditor (Packaged)": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

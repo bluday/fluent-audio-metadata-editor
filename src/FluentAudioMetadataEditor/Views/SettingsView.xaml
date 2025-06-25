@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UserControl mc:Ignorable="d"
+             x:Class="FluentAudioMetadataEditor.Views.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:communityToolkit="using:CommunityToolkit.WinUI"
+             xmlns:communityToolkitControls="using:CommunityToolkit.WinUI.Controls"
+             xmlns:controls="using:FluentAudioMetadataEditor.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid MaxWidth="800">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Orientation="Vertical" Spacing="16">
+                <!-- General -->
+                <Grid Margin="0,8,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Header -->
+                    <controls:SettingsSectionHeader Header="General" Glyph="&#xf8a6;" Grid.Row="0"/>
+
+                    <!-- Expanders -->
+                    <StackPanel Spacing="2" Grid.Row="1">
+                        <!-- Language -->
+                        <communityToolkitControls:SettingsCard Description="Select which language to display"
+                                                               Header="Language"
+                                                               HeaderIcon="{communityToolkit:FontIcon Glyph=&#xf2b7;}">
+                            <ComboBox/>
+                        </communityToolkitControls:SettingsCard>
+                    </StackPanel>
+                </Grid>
+                
+                <!-- Appearance -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Header -->
+                    <controls:SettingsSectionHeader Header="Appearance" Glyph="&#xead5;" Grid.Row="0"/>
+
+                    <!-- Expanders -->
+                    <StackPanel Spacing="2" Grid.Row="1">
+                        <!-- Always on top -->
+                        <communityToolkitControls:SettingsCard Description="Decide whether the application should always stay on top of other windows"
+                                                               Header="Always on top"
+                                                               HeaderIcon="{communityToolkit:FontIcon Glyph=&#xe81e;}">
+                            <ToggleSwitch/>
+                        </communityToolkitControls:SettingsCard>
+                            
+                        <!-- Application theme -->
+                        <communityToolkitControls:SettingsCard Description="Select which application theme to display"
+                                                               Header="Application theme"
+                                                               HeaderIcon="{communityToolkit:FontIcon Glyph=&#xe790;}">
+                            <ComboBox/>
+                        </communityToolkitControls:SettingsCard>
+
+                        <!-- System backdrop -->
+                        <communityToolkitControls:SettingsCard Description="Select which system backdrop to use"
+                                                               Header="System backdrop"
+                                                               HeaderIcon="{communityToolkit:FontIcon Glyph=&#xeb42;}">
+                            <ComboBox/>
+                        </communityToolkitControls:SettingsCard>
+                    </StackPanel>
+                </Grid>
+
+                <!-- About -->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Header -->
+                    <controls:SettingsSectionHeader Header="About" Glyph="&#xe946;" Grid.Row="0"/>
+
+                    <!-- Expanders -->
+                    <StackPanel Spacing="2" Grid.Row="1">
+                        <communityToolkitControls:SettingsExpander Content="1.0"
+                                                                   Description="© BluDay 2025"
+                                                                   Header="Fluent Audio Metadata Editor"
+                                                                   HeaderIcon="{communityToolkit:BitmapIcon Source=ms-appx:///Assets/StoreLogo.scale-100.png}">
+                            <!-- Items -->
+                            <communityToolkitControls:SettingsExpander.Items>
+                                <communityToolkitControls:SettingsCard Header="Session identifier: {0}"/>
+                            </communityToolkitControls:SettingsExpander.Items>
+                        </communityToolkitControls:SettingsExpander>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Reset preferences -->
+                <HyperlinkButton Content="Repository on GitHub"
+                                 NavigateUri="https://github.com/bluday/fluent-audio-metadata-editor"
+                                 Padding="0"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

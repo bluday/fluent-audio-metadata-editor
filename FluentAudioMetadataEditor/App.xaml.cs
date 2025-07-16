@@ -1,5 +1,4 @@
 ﻿using Microsoft.UI.Xaml;
-using System;
 
 namespace FluentAudioMetadataEditor;
 
@@ -8,11 +7,6 @@ namespace FluentAudioMetadataEditor;
 /// </summary>
 public partial class App : Application
 {
-    /// <summary>
-    /// The absolute path for the 64x64 icon.
-    /// </summary>
-    public static readonly string IconPath = System.IO.Path.Combine(AppContext.BaseDirectory, "Assets", "Icon-64.ico");
-
     /// <summary>
     /// Initializes the singleton application object. This is the first line of authored code
     /// executed, and as such is the logical equivalent of main() or WinMain().

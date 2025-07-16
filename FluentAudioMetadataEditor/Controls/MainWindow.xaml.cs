@@ -20,6 +20,11 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
     private readonly OverlappedPresenter _overlappedPresenter;
 
     /// <summary>
+    /// The absolute path for the 64x64 icon.
+    /// </summary>
+    public static readonly string IconPath = System.IO.Path.Combine(AppContext.BaseDirectory, "Assets", "Icon-64.ico");
+
+    /// <summary>
     /// Initializes a new instance of the <see cref="MainWindow"/> class.
     /// </summary>
     public MainWindow()
@@ -48,11 +53,11 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 
         _appWindow.SetPresenter(_overlappedPresenter);
         
-        _appWindow.Resize(1600, 1600, _currentDpiScaleFactor);
+        _appWindow.Resize(1200, 1200);
 
         _appWindow.MoveToCenter();
 
-        _appWindow.SetIcon(App.IconPath);
+        _appWindow.SetIcon(IconPath);
     }
 
     /// <summary>
@@ -62,7 +67,7 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
     {
         string title = _resourceLoader.GetString("General/AppDisplayName");
 
-        _appWindow.SetIcon(App.IconPath);
+        _appWindow.SetIcon(IconPath);
 
         SetTitleBar(AppTitleBar);
         
@@ -70,7 +75,7 @@ public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
 
         Title = title;
 
-        AppTitleBar.Icon = new BitmapImage(new Uri(App.IconPath));
+        AppTitleBar.Icon = new BitmapImage(new Uri(IconPath));
 
         AppTitleBar.Title = title;
     }

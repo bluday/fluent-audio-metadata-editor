@@ -1,0 +1,76 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<ApplicationIcon>Assets\Icon-64.ico</ApplicationIcon>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+		<Authors>BluDay</Authors>
+		<Copyright>© BluDay 2025</Copyright>
+		<Description>Developed by BluDay.</Description>
+		<EnableMsixTooling>true</EnableMsixTooling>
+		<LangVersion>preview</LangVersion>
+		<Nullable>enable</Nullable>
+		<OutputType>WinExe</OutputType>
+		<Platforms>x64</Platforms>
+		<Product>Fluent Audio Metadata Editor</Product>
+		<RootNamespace>FluentAudioMetadataEditor</RootNamespace>
+		<RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+		<PublishProfile>win-x64.pubxml</PublishProfile>
+		<PublishAot>True</PublishAot>
+		<RepositoryUrl>https://github.com/bluday/fluent-audio-metadata-editor</RepositoryUrl>
+		<SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetFramework>net9.0-windows10.0.26100.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<Title>Fluent Audio Metadata Editor</Title>
+		<UseWinUI>true</UseWinUI>
+		<WebView2EnableCsWinRTProjection>False</WebView2EnableCsWinRTProjection>
+		<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+		<WindowsSdkPackageVersion>10.0.26100.38</WindowsSdkPackageVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="BluDay.Net">
+			<HintPath>..\..\bluday-dotnet\BluDay.Net\bin\x64\Release\net9.0\BluDay.Net.dll</HintPath>
+		</Reference>
+
+		<Reference Include="BluDay.Net.WinUI3">
+			<HintPath>..\..\bluday-dotnet\BluDay.Net.WinUI3\bin\x64\Release\net9.0-windows10.0.26100.0\BluDay.Net.WinUI3.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.250402"/>
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.250402"/>
+		<PackageReference Include="CommunityToolkit.WinUI.Helpers" Version="8.2.250402"/>
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.6"/>
+		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0"/>
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4188"/>
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250606001"/>
+		<Manifest Include="$(ApplicationManifest)"/>
+	</ItemGroup>
+
+	<!-- 
+	Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
+	Tools extension to be activated for this project even if the Windows App SDK Nuget
+	package has not yet been restored.
+	-->
+	<ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+		<ProjectCapability Include="Msix"/>
+	</ItemGroup>
+
+	<!-- 
+	Defining the "HasPackageAndPublishMenuAddedByProject" property here allows the Solution 
+	Explorer "Package and Publish" context menu entry to be enabled for this project even if 
+	the Windows App SDK Nuget package has not yet been restored.
+	-->
+	<PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
+		<HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
+	</PropertyGroup>
+
+	<!-- Assets -->
+	<ItemGroup>
+		<None Update="Assets\*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+</Project>

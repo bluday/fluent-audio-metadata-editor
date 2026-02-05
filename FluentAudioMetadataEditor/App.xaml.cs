@@ -7,6 +7,8 @@ namespace FluentAudioMetadataEditor;
 /// </summary>
 public partial class App : Application
 {
+    private MainWindow? _mainWindow;
+
     /// <summary>
     /// Initializes the singleton application object. This is the first line of authored code
     /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -24,6 +26,8 @@ public partial class App : Application
     /// </param>
     protected override void OnLaunched(LaunchActivatedEventArgs args)
     {
-        new Controls.MainWindow().Activate();
+        _mainWindow = new MainWindow();
+        
+        _mainWindow.Activate();
     }
 }

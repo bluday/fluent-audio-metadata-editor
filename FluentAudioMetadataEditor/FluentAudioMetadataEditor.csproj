@@ -4,7 +4,7 @@
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 		<AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
 		<Authors>BluDay</Authors>
-		<Copyright>© BluDay 2025</Copyright>
+		<Copyright>© BluDay 2026</Copyright>
 		<Description>Developed by BluDay.</Description>
 		<EnableMsixTooling>true</EnableMsixTooling>
 		<LangVersion>preview</LangVersion>
@@ -28,25 +28,19 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Reference Include="BluDay.Net">
-			<HintPath>..\..\bluday-dotnet\BluDay.Net\bin\x64\Release\net9.0\BluDay.Net.dll</HintPath>
-		</Reference>
-
-		<Reference Include="BluDay.Net.WinUI3">
-			<HintPath>..\..\bluday-dotnet\BluDay.Net.WinUI3\bin\x64\Release\net9.0-windows10.0.26100.0\BluDay.Net.WinUI3.dll</HintPath>
-		</Reference>
-	</ItemGroup>
-	
-	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
-		<PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.250402"/>
-		<PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.250402"/>
-		<PackageReference Include="CommunityToolkit.WinUI.Helpers" Version="8.2.250402"/>
-		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.6"/>
-		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0"/>
-		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4188"/>
-		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250606001"/>
-		<Manifest Include="$(ApplicationManifest)"/>
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" Version="8.2.251219" />
+		<PackageReference Include="CommunityToolkit.WinUI.Controls.SettingsControls" Version="8.2.251219" />
+		<PackageReference Include="CommunityToolkit.WinUI.Helpers" Version="8.2.251219" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.2" />
+		<PackageReference Include="Microsoft.Windows.CsWin32" Version="0.3.269">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.2.0" />
+		<PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.7463" />
+		<PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260101001" />
+		<Manifest Include="$(ApplicationManifest)" />
 	</ItemGroup>
 
 	<!-- 
@@ -55,7 +49,7 @@
 	package has not yet been restored.
 	-->
 	<ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-		<ProjectCapability Include="Msix"/>
+		<ProjectCapability Include="Msix" />
 	</ItemGroup>
 
 	<!-- 
@@ -66,11 +60,4 @@
 	<PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
 		<HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
 	</PropertyGroup>
-
-	<!-- Assets -->
-	<ItemGroup>
-		<None Update="Assets\*">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
-	</ItemGroup>
 </Project>
